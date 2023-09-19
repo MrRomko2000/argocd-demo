@@ -1,7 +1,7 @@
 replicaCount: 3
 
 image:
-  repository: artemis
+  repository: "${var.artemis-config["repository"]}"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "9.0.0"
