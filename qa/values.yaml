@@ -1,7 +1,7 @@
 replicaCount: 3
 
 image:
-  repository: ../modules/terraform-helm-local/
+  repository: https://github.com/farrukh90/artemis.git
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "2.0.0"
