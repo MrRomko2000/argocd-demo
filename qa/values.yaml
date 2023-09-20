@@ -1,14 +1,14 @@
 replicaCount: 3
 
 image:
-  repository: "${var.artemis-config["repository"]}"
+  repository: us-central1-docker.pkg.dev/utopian-planet-396823/artemis/artemis
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "9.0.0"
 
 service:
   type: ClusterIP
-  port: 80
+  port: 5000
 
 ingress:
   enabled: true
