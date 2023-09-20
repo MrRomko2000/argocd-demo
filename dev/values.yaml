@@ -1,4 +1,4 @@
-replicaCount: 3
+replicaCount: 1
 
 image:
   repository: us-central1-docker.pkg.dev/utopian-planet-396823/artemis/artemis
