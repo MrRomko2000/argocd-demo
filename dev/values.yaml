@@ -1,28 +1,28 @@
 # replicaCount: 3
 
-# image:
-#   repository: https://github.com/farrukh90/artemis.git
-#   pullPolicy: IfNotPresent
-#   # Overrides the image tag whose default is the chart appVersion.
-#   tag: "10.0.0"
+image:
+  repository: us-central1-docker.pkg.dev/utopian-planet-396823/artemis/artemis
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "10.0.0"
 
-# service:
-#   type: ClusterIP
-#   port: 80
+service:
+  type: ClusterIP
+  port: 5000
 
-# ingress:
-#   enabled: true
-#   className: "nginx"
-#   annotations: 
-#     ingress.kubernetes.io/ssl-redirect: "false"
-#     cert-manager.io/cluster-issuer: letsencrypt-prod-dns01
-#     acme.cert-manager.io/http01-edit-in-place: "true"
-#   hosts:
-#     - host: artemis-qa.cyberreplicant.com
-#       paths:
-#         - path: /
-#           pathType: ImplementationSpecific
-#   tls: 
-#    - secretName: artemis-tls
-#      hosts:
-#        - artemis-qa.cyberreplicant.com
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations: 
+    ingress.kubernetes.io/ssl-redirect: "false"
+    cert-manager.io/cluster-issuer: letsencrypt-prod-dns01
+    acme.cert-manager.io/http01-edit-in-place: "true"
+  hosts:
+    - host: artemis-qa.cyberreplicant.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: 
+   - secretName: artemis-tls
+     hosts:
+       - artemis-qa.cyberreplicant.com
